@@ -1,0 +1,38 @@
+{
+  "name": "universal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "export NODE_ENV=development && webpack -d",
+    "start": "export NODE_ENV=development && npm run build && nodemon --ignore src/static/ --exec babel-node -- src/server/index.js",
+    "build:prod": "export NODE_ENV=production && webpack -p",
+    "start:prod": "export NODE_ENV=production && npm run build:prod && nodemon --ignore src/static/ --exec babel-node -- src/server/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "7.2.2",
+    "@babel/node": "7.2.2",
+    "@babel/plugin-transform-runtime": "7.2.0",
+    "@babel/preset-env": "7.2.3",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.4",
+    "nodemon": "1.18.9",
+    "webpack": "4.28.3",
+    "webpack-cli": "3.1.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.2.0",
+    "axios": "0.18.0",
+    "express": "^5.0.0-alpha.6",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
+  }
+}
